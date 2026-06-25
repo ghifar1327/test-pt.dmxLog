@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // Layout & Protected Route components
 import Layout from './components/Layout';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute, { AdminBlockRoute } from './components/ProtectedRoute';
 
 // Public & User pages
 import Home from './pages/Home';
@@ -35,10 +35,12 @@ function App() {
         <BrowserRouter>
           <Routes>
             {/* PUBLIC & USER SHOP VIEWS (With Layout and Footer) */}
-            <Route path="/" element={<Layout><Home /></Layout>} />
-            <Route path="/about" element={<Layout><About /></Layout>} />
-            <Route path="/contact" element={<Layout><Contact /></Layout>} />
-            <Route path="/products" element={<Layout><Products /></Layout>} />
+            {/* <AdminBlockRoute> */}
+               <Route path="/" element={<AdminBlockRoute><Layout><Home /></Layout></AdminBlockRoute>} />
+               <Route path="/about" element={<AdminBlockRoute><Layout><About /></Layout></AdminBlockRoute>} />
+               <Route path="/contact" element={<AdminBlockRoute><Layout><Contact /></Layout></AdminBlockRoute>} />
+               <Route path="/products" element={<AdminBlockRoute><Layout><Products /></Layout></AdminBlockRoute>} />
+            {/* </AdminBlockRoute> */}
             <Route path="/login" element={<Layout><Login /></Layout>} />
             <Route path="/register" element={<Layout><Register /></Layout>} />
 
@@ -46,7 +48,7 @@ function App() {
             <Route 
               path="/cart" 
               element={
-                <ProtectedRoute allowedRoles={['user', 'admin']}>
+                <ProtectedRoute allowedRoles={['user']}>
                   <Layout><Cart /></Layout>
                 </ProtectedRoute>
               } 
@@ -54,7 +56,7 @@ function App() {
             <Route 
               path="/payment" 
               element={
-                <ProtectedRoute allowedRoles={['user', 'admin']}>
+                <ProtectedRoute allowedRoles={['user']}>
                   <Layout><Payment /></Layout>
                 </ProtectedRoute>
               } 
@@ -62,7 +64,7 @@ function App() {
             <Route 
               path="/transactions" 
               element={
-                <ProtectedRoute allowedRoles={['user', 'admin']}>
+                <ProtectedRoute allowedRoles={['user']}>
                   <Layout><TransactionHistory /></Layout>
                 </ProtectedRoute>
               } 
