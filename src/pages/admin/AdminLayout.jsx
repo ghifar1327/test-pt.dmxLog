@@ -77,13 +77,6 @@ const AdminLayout = () => {
 
         {/* Back and Logout */}
         <div className="border-t border-slate-900 pt-6 space-y-3">
-          <Link
-            to="/"
-            className="flex items-center space-x-3 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-slate-200 transition-colors"
-          >
-            <HiArrowLeft className="text-sm" />
-            <span>Go to Shop</span>
-          </Link>
           <button
             onClick={handleLogout}
             className="w-full flex items-center space-x-3 px-4 py-2.5 rounded-xl text-xs font-semibold text-red-400 hover:bg-red-500/10 transition-colors"
