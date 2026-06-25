@@ -100,7 +100,7 @@ const Navbar = () => {
                     Logged in as <span className="font-bold text-brand-400 uppercase">{currentUser.role}</span>
                   </div>
                   
-                  {currentUser.role === 'admin' ? (
+                  {/* {currentUser.role === 'admin' ? (
                     <Link
                       to="/admin/dashboard"
                       onClick={() => setProfileDropdownOpen(false)}
@@ -109,6 +109,7 @@ const Navbar = () => {
                       Admin Dashboard
                     </Link>
                   ) : (
+                    )} */}
                     <Link
                       to="/transactions"
                       onClick={() => setProfileDropdownOpen(false)}
@@ -116,7 +117,6 @@ const Navbar = () => {
                     >
                       My Transactions
                     </Link>
-                  )}
                   
                   <button
                     onClick={() => {
