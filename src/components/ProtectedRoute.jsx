@@ -21,8 +21,21 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
   }
 
   if (allowedRoles && !allowedRoles.includes(currentUser.role)) {
+    if (currentUser.role === 'admin') {
+    return <Navigate to="/admin/dashboard" replace />;
+  }
     // If logged in but role not allowed, send to home
     return <Navigate to="/" replace />;
+  }
+
+  return children;
+};
+
+export const AdminBlockRoute = ({ children }) => {
+  const { currentUser } = useSelector((state) => state.auth);
+
+  if (currentUser?.role === 'admin') {
+    return <Navigate to="/admin/dashboard" replace />;
   }
 
   return children;
