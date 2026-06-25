@@ -9,27 +9,38 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
 
   useEffect(() => {
     if (!currentUser) {
-      toast.warning('Please login to access this page.');
+      if (!toast.isActive('login-required')) {
+        toast.warning('Please login to access this page.', {
+          toastId: 'login-required',
+        });
+      }
     } else if (allowedRoles && !allowedRoles.includes(currentUser.role)) {
-      toast.error('Access Denied: You do not have permission to view this page.');
+      if (!toast.isActive('access-denied')) {
+        toast.error(
+          'Access Denied: You do not have permission to view this page.',
+          {
+            toastId: 'access-denied',
+          }
+        );
+      }
     }
   }, [currentUser, allowedRoles]);
 
   if (!currentUser) {
-    // Redirect to login but save the current location they were trying to access
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   if (allowedRoles && !allowedRoles.includes(currentUser.role)) {
     if (currentUser.role === 'admin') {
-    return <Navigate to="/admin/dashboard" replace />;
-  }
-    // If logged in but role not allowed, send to home
+      return <Navigate to="/admin/dashboard" replace />;
+    }
+
     return <Navigate to="/" replace />;
   }
 
   return children;
 };
+
 
 export const AdminBlockRoute = ({ children }) => {
   const { currentUser } = useSelector((state) => state.auth);
@@ -42,3 +53,5 @@ export const AdminBlockRoute = ({ children }) => {
 };
 
 export default ProtectedRoute;
+
+// export default ProtectedRoute;
