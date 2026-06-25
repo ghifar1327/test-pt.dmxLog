@@ -8,7 +8,7 @@ const initialState = {
       size: '1200 x 800 x 144 mm',
       price: 15000, // Rp per day
       stock: 120,
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgIJAM47hzbRHKy6y1VAhu7SfW0dE4xgqUMsX05HLprf2zhpTuQ4Y5yNE&s=10',
       description: 'Standard European wooden pallet. Ideal for heavy loads, high durability, and certified for international shipping.'
     },
     {
@@ -17,7 +17,7 @@ const initialState = {
       size: '1200 x 1000 x 150 mm',
       price: 25000,
       stock: 75,
-      image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80',
+      image: 'https://imrnrwxhkjji5o.leadongcdn.com/cloud/qjBqqKRrkSjlrrirlkr/qh-1515_kantuwang.jpg',
       description: 'Hygienic, easy to clean, and extremely weather-resistant plastic pallet. Perfect for food, pharmaceutical, and chemical industries.'
     },
     {
@@ -26,17 +26,8 @@ const initialState = {
       size: '1200 x 1000 x 150 mm',
       price: 18000,
       stock: 90,
-      image: 'https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&w=600&q=80',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Wooden_pallet_with_glove.jpg',
       description: 'Robust 4-way entry block pallet. The most widely used pallet size in North America and industrial logistics.'
-    },
-    {
-      id: 'pallet-4',
-      name: 'Lightweight Export Paper Pallet',
-      size: '1100 x 1100 x 120 mm',
-      price: 12000,
-      stock: 150,
-      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80',
-      description: 'Eco-friendly, lightweight corrugated paper pallet. Excellent for air freight and single-use export shipments.'
     }
   ]
 };
