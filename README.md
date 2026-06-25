@@ -1,16 +1,82 @@
-# React + Vite
+# Dokumentasi Fitur Prototype Aplikasi Rental Pallet
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## 1. Pendahuluan
+Aplikasi ini merupakan prototype rental pallet berbasis web dengan fitur lengkap untuk manajemen produk, transaksi, dan pengguna. Seluruh data disimpan pada LocalStorage dan project mengikuti struktur scalable serta best practice React (tanpa TypeScript).
 
-Currently, two official plugins are available:
+## 2. Teknologi yang Digunakan
+- React Router DOM (navigasi dan proteksi halaman)
+- React Hook Form & Yup Validation (form & validasi)
+- Redux Toolkit & Redux Persist (state management & persistensi)
+- React Icons (ikon UI)
+- React Toastify (notifikasi sukses/error)
+- LocalStorage (penyimpanan data)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 3. Role Pengguna
+- **User**
+- **Admin** (kode referensi: `4Pl!k@s1pROTotYp3`)
 
-## React Compiler
+## 4. Fitur User
+- Register
+- Login
+- Home
+- About
+- Contact Us
+- Product
+- Cart
+- Payment
+- Transaction History
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 5. Fitur Admin
+- Dashboard
+- Product Management (CRUD)
+- User Management
+- Transaction Management
 
-## Expanding the Oxlint configuration
+## 6. Struktur Data
+### Product Pallet
+- id
+- name
+- image
+- size
+- price
+- stock
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Transaction
+- transactionId
+- userName
+- address
+- phone
+- rentalDuration
+- items
+- totalAmount
+- transactionDate
+
+### Item Transaction
+- palletName
+- quantity
+- subtotal
+
+## 7. Business Rules
+- User wajib login sebelum add to cart
+- User wajib login sebelum payment
+- Quantity cart tidak boleh melebihi stock
+- Payment berhasil akan mengurangi stock
+- Cart dikosongkan setelah payment berhasil
+- Gunakan toast notification untuk seluruh success/error
+- Admin yang telah login tidak bisa akses halaman untuk user dan tidak bisa melakukan transaksi
+- User dan public tidak bisa mengakses halaman admin
+- Gunakan protected route berdasarkan role
+
+## 8. UI Requirements
+- Responsive Desktop, Tablet, Mobile
+- Mobile menggunakan hamburger menu
+- Modern marketplace design
+- Sidebar dashboard admin
+- Dashboard statistics cards
+- Product card dengan hover effect
+- Loading state dan empty state
+- Tema terang
+
+## 9. Struktur Project
+- Mengikuti scalable dan best practice React (tanpa TypeScript)
+
