@@ -30,7 +30,7 @@ import TransactionManagement from './pages/admin/TransactionManagement';
 
 function App() {
   const DownloadButton = () => {
-  const apkLink = "https://github.com/ghifar1327/test-pt.dmxLog.git";
+  const apkLink = "https://github.com/ghifar1327/test-pt.dmxLog/releases/tag/v1.0.0";
 
     
 };
