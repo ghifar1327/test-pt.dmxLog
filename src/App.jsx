@@ -29,7 +29,20 @@ import UserManagement from './pages/admin/UserManagement';
 import TransactionManagement from './pages/admin/TransactionManagement';
 
 function App() {
+  const DownloadButton = () => {
+  const apkLink = "https://github.com/ghifar1327/test-pt.dmxLog.git";
+
+    
+};
   return (
+    <>
+    <a 
+      href={apkLink} 
+      className="hidden bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+      download
+      >
+      Download APK Prototype
+    </a>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
@@ -103,10 +116,11 @@ function App() {
             draggable
             pauseOnHover
             theme="dark"
-          />
+            />
         </BrowserRouter>
       </PersistGate>
     </Provider>
+            </>
   );
 }
 
